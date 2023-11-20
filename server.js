@@ -14,7 +14,9 @@ app.get("/", (req, res) => {
   // console.log("home route hitting");
   const collection = db.getCollection("users") || db.addCollection("users");
   const data = collection ? collection.data : [];
-  res.json(data);
+  res.json({
+    deployed:"deployed"
+  });
 });
 
 app.get("/user", (req, res) => {
